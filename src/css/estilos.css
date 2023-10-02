@@ -1,0 +1,99 @@
+body {
+    background-color: #000000;
+    overflow: hidden; /*ele esconde o q tiver transbordando*/
+}
+
+main::after { /*é um pseudo elemento*/
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 80vw;
+
+    background: linear-gradient(-223deg, #000 30%, rgba(0, 0, 0, 0) 55%) no-repeat; /*Degradê da página*/
+    /*o rgba é pra fazer opacidade*/ 
+}
+
+main .personagem {
+    display: none; /*esconde todos os elementos*/
+    height: 100vh; /*altura da tela do dispositivo da pessoa*/
+}
+
+main .personagem.selecionado {
+    display: block; /*apresenta o elemento*/
+}
+
+main .personagem .imagem {
+    width: 100%; /*largura*/
+    height: 100%; /*altura*/
+    object-fit: cover; /*faz a imagem parar de ficar distorcida*/
+}
+
+.conteudo {
+    position: absolute; /*posiciona um elemento de forma absoluta, ou seja, fica por cima de qualquer coisa*/
+    top: 0; /*O elemento sobe para a parte de cima da página*/
+    left: 150px; /*Afasta da esquerda*/
+
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 380px;
+    z-index: 1;
+}
+
+.conteudo .nome-personagem {
+    color: #ffffff;
+    font-size: 48px;
+    font-family: "Secular One";
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.conteudo .descricao {
+    color: #ffffff;
+    font-size: 16px; /*o padrão já é 16, mas é bom colocar*/
+    font-family: "Rubik";
+    line-height: 24px;
+}
+
+.conteudo .logo {
+    background-image: url("../imagens/one-piece-logo.png"); /*é como se fosse um papel de parede*/
+    background-size: cover;
+    height: 140px;
+    width: 330px;
+    margin-bottom: 35px;
+}
+
+.botoes {
+    position: fixed;
+    top: 0;
+    right: 0;
+    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 180px;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1px;/*espaçamemto entre os elementos*/
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.botoes .botao {
+    border: none;
+    background: #000000;
+    cursor: pointer; /*deixar o mouse como se fosse para clicar em algum lugar*/
+    border-radius: 50%; /*deixa o botao redondo*/
+}
+
+.botoes .botao img {
+    border-radius: 50%; /*deixa a imagem redonda*/
+}
+
+.botoes .botao.selecionado {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #d9d9d9;
+}

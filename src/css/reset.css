@@ -1,0 +1,9 @@
+* {
+    margin: 0; /*serve para tirar as margens*/
+    padding: 0;
+    box-sizing: border-box; /*Mexe com os espaçamentos*/
+}
+
+ul /*lista*/ {
+    list-style: none;
+}
